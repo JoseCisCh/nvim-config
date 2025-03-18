@@ -14,7 +14,7 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- Next two for searhving behavior
+-- Next two for searching behavior
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
@@ -50,6 +50,8 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Avoids entering in Ex mode
 vim.keymap.set("n", "Q", "<nop>")
+
+-- I think this is for a plugin becasue is not doing anything.
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Have to research this one
