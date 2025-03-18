@@ -31,4 +31,15 @@ return require('packer').startup(function(use)
   use({'hrsh7th/cmp-buffer'})
   use({'williamboman/mason.nvim'})
   use({'williamboman/mason-lspconfig'})
+
+    -- Autopairs and automaps
+    use {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    }
+    use({'windwp/nvim-ts-autotag'})
 end)
+
