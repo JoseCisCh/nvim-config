@@ -44,6 +44,11 @@ return require('packer').startup(function(use)
 
     -- Debbuger plugins + nvim-jdtls
     use({'mfussenegger/nvim-dap'})
-    use({'mfussenegger/nvim-jdtls'})
+    use({
+        'mfussenegger/nvim-jdtls',
+        requires = {
+         'mfussenegger/nvim-dap',
+        }
+    })
 end)
 
