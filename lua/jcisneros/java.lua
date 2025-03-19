@@ -9,9 +9,9 @@ local config = {
 
     },
     root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw', 'pom.xml', 'build.gradle'}, { upward = true })[1]),
-	--root_dir = require('lspconfig').util.root_pattern('.git', 'pom.xml', 'build.gradle'),
-	settings = {
-		java = {
+    --root_dir = require('lspconfig').util.root_pattern('.git', 'pom.xml', 'build.gradle'),
+    settings = {
+        java = {
             configuration = {
                 -- This will set JAVA_HOME for jdtls specifically
                 --home = "/Users/josecisneros/.sdkman/candidates/java/21.0.6-amzn"
@@ -32,7 +32,7 @@ local config = {
                 }
 
             }
-		}
-	}
+        }
+    }
 }
 require('jdtls').start_or_attach(config)..]]
