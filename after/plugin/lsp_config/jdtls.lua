@@ -1,6 +1,6 @@
 -- Configuring LSP servers
 
-require('lspconfig').jdtls.setup({
+--[[require('lspconfig').jdtls.setup({
 	cmd = {
 		"/Users/josecisneros/.local/share/nvim/mason/bin/jdtls"
 	},
@@ -26,4 +26,4 @@ require('lspconfig').jdtls.setup({
 			}
 		}
 	}
-})
+})--]]

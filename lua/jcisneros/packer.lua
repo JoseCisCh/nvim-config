@@ -41,5 +41,9 @@ return require('packer').startup(function(use)
         end
     }
     use({'windwp/nvim-ts-autotag'})
+
+    -- Debbuger plugins + nvim-jdtls
+    use({'mfussenegger/nvim-dap'})
+    use({'mfussenegger/nvim-jdtls'})
 end)
 

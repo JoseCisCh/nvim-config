@@ -1,8 +1,10 @@
--- This configuration is needed to make Java 21 work but
--- still be able to use other SDK versions.
-vim.uv.os_setenv("JAVA_HOME", "/Users/josecisneros/.sdkman/candidates/java/21.0.6-amzn")
 
---[[local home = os.getenv('HOME')
+local home = os.getenv('HOME')
+local bundles = {
+    vim.fn.glob("/Users/josecisneros/.local/share/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar", 1)
+}
+--vim.list_extend(bundles, vim.split(vim.fn.glob("/path/to/microsoft/vscode-java-test/server/*.jar", 1), "\n"))
+
 local config = {
     cmd = {
         home .. '/.local/share/nvim/mason/packages/jdtls/bin/jdtls',
@@ -33,6 +35,9 @@ local config = {
 
             }
 		}
-	}
+	},
+    init_options = {
+        bundles = bundles,
+    }
 }
-require('jdtls').start_or_attach(config)..]]
+require('jdtls').start_or_attach(config)
