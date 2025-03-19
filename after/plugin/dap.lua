@@ -1,6 +1,38 @@
 local dap = require('dap')
 
+dap.adapters["pwa-node"] = {
+    type = "server",
+    host = "localhost",
+    port = "${port}",
+    executable = {
+        command = "node",
+        args = { os.getenv("HOME") .. '/.js-debug/js-debug/src/dapdebugserver.js', "${port}"}
+    }
+}
 
+dap.configurations.javascript = {
+    {
+        type = 'pwa-node',
+        request = 'launch',
+        name = 'Launch file',
+        program = '${file}',
+        cwd = '${workspaceFolder}',
+    },
+}
+
+dap.configurations.typescript = {
+    {
+        type = 'pwa-node',
+        request = 'launch',
+        name = 'Launch file',
+        program = '${file}',
+        cwd = '${workspaceFolder}',
+        sourceMaps = true,
+        protocol = 'inspector',
+    },
+}
+
+----- Remaps for DAP ------
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
 vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
 vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)

@@ -22,17 +22,22 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
     use('ThePrimeagen/harpoon')
+
+    --------- Undotree configuration --------- 
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
 
+    --------- LSP congiuration --------- 
     use({'neovim/nvim-lspconfig'})
     use({'hrsh7th/nvim-cmp'})
     use({'hrsh7th/cmp-nvim-lsp'})
     use({'hrsh7th/cmp-buffer'})
+
+    -- Next two for easily installing LSPs and configuring them
     use({'williamboman/mason.nvim'})
     use({'williamboman/mason-lspconfig'})
 
-    -- Autopairs and automaps
+    --------- Autopairs and automaps --------- 
     use {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
@@ -42,7 +47,7 @@ return require('packer').startup(function(use)
     }
     use({'windwp/nvim-ts-autotag'})
 
-    -- Debbuger plugins + nvim-jdtls
+    --------- Debbuger plugins + nvim-jdtls -----------
     use({'mfussenegger/nvim-dap'})
     use({
         'mfussenegger/nvim-jdtls',
@@ -50,5 +55,6 @@ return require('packer').startup(function(use)
             'mfussenegger/nvim-dap',
         }
     })
+
 end)
 
