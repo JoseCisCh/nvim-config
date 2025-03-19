@@ -12,6 +12,9 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+
+    ----- Color schemes -----
+    --rose-pine
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
@@ -19,6 +22,17 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme rose-pine')
         end
     })
+    -- onedark
+   use({
+        'navarasu/onedark.nvim',
+        config = function()
+            require'onedark'.setup {
+                transparent = true
+            }
+            require'onedark'.load()
+        end,
+    })
+
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
     use('ThePrimeagen/harpoon')
