@@ -41,7 +41,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 --Deleting and sending to void to avoid keeping the
 --deletion in the buffer (no Yanking)
-vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
+vim.keymap.set({ "n", "v" }, "<leader>dv", "\"_d")
 
 -- Simply becasue of the difference between Crtl-c
 -- and Esc when editing vertically.
