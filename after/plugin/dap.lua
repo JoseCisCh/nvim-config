@@ -9,7 +9,7 @@ dap.adapters["pwa-node"] = {
     port = "${port}",
     executable = {
         command = "node",
-        args = { os.getenv("HOME") .. '/.js-debug/js-debug/src/dapdebugserver.js', "${port}"}
+        args = { os.getenv("HOME") .. '/.js-debug/js-debug/src/dapdebugserver.js', "${port}" }
     }
 }
 
@@ -69,11 +69,11 @@ dap.configurations.typescript = {
 -- Python configuration --
 dap.configurations.python = {
     {
-        type = 'python';
-        request = 'launch';
-        name = "Launch file";
+        type = 'python',
+        request = 'launch',
+        name = "Launch file",
 
-        program = "${file}";
+        program = "${file}",
         pythonPath = function()
             local cwd = vim.fn.getcwd()
             if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
@@ -81,11 +81,11 @@ dap.configurations.python = {
             elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
                 return cwd .. '/.venv/bin/python'
             elseif os.getenv("CONDA_PYTHON_EXE") ~= nil then
-               return  os.getenv("CONDA_PYTHON_EXE")
+                return os.getenv("CONDA_PYTHON_EXE")
             else
                 return '/usr/bin/python'
             end
-        end;
+        end,
     },
 }
 
@@ -99,10 +99,10 @@ vim.keymap.set('n', '<leader>B', function() require('dap').set_breakpoint() end)
 vim.keymap.set('n', '<leader>lp', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
 vim.keymap.set('n', '<leader>dr', function() require('dap').repl.open() end)
 vim.keymap.set('n', '<leader>dl', function() require('dap').run_last() end)
-vim.keymap.set({'n', 'v'}, '<leader>dh', function()
+vim.keymap.set({ 'n', 'v' }, '<leader>dh', function()
     require('dap.ui.widgets').hover()
 end)
-vim.keymap.set({'n', 'v'}, '<leader>dp', function()
+vim.keymap.set({ 'n', 'v' }, '<leader>dp', function()
     require('dap.ui.widgets').preview()
 end)
 vim.keymap.set('n', '<leader>df', function()
