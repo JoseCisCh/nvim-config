@@ -8,7 +8,7 @@ local bundles = {
 local config = {
     cmd = {
         home .. '/.local/share/nvim/mason/packages/jdtls/bin/jdtls',
-
+        "-data", vim.fn.stdpath("data") .. "/jdtls-workspace/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
     },
     root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw', 'pom.xml', 'build.gradle'}, { upward = true })[1]),
     --root_dir = require('lspconfig').util.root_pattern('.git', 'pom.xml', 'build.gradle'),
