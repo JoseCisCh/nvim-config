@@ -54,7 +54,7 @@ vim.keymap.set("n", "Q", "<nop>")
 -- I think this is for a plugin becasue is not doing anything.
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
--- Have to research this one
+-- Formats the current buffer (I guess file) 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- Next 4 are for quickfix navigaton (applies if used to it)
@@ -101,10 +101,6 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
--- This one I added it.
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>e",
-    "<cmd>lua vim.diagnostic.open_float()<CR>",
-    { noremap = true, silent = true }
-)
+-- Diagnostic keymaps
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {silent = true})
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, {silent = true})

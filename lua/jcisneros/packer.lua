@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
         end,
     })
 
+    ----- Tresitter plugins -----
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
     use('ThePrimeagen/harpoon')
@@ -69,6 +70,5 @@ return require('packer').startup(function(use)
             'mfussenegger/nvim-dap',
         }
     })
-
 end)
 
