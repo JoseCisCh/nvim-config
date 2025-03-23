@@ -104,3 +104,22 @@ end)
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {silent = true})
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, {silent = true})
+
+
+------ Snippets remaps -------
+
+vim.keymap.set({ 'i', 's' }, '<Tab>', function()
+    if vim.snippet.active({ direction = 1 }) then
+        return '<cmd>lua vim.snippet.jump(1)<cr>'
+    else
+        return '<Tab>'
+    end
+end, { expr = true })
+
+vim.keymap.set({ 'i', 's' }, '<S-Tab>', function()
+    if vim.snippet.active({ direction = -1 }) then
+        return '<cmd>lua vim.snippet.jump(-1)<cr>'
+    else
+        return '<S-Tab>'
+    end
+end, { expr = true })
