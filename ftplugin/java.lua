@@ -5,6 +5,8 @@ local bundles = {
 }
 --vim.list_extend(bundles, vim.split(vim.fn.glob("/path/to/microsoft/vscode-java-test/server/*.jar", 1), "\n"))
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true -- Enable LSP snippets
 local config = {
     cmd = {
         home .. '/.local/share/nvim/mason/packages/jdtls/bin/jdtls',
@@ -38,6 +40,7 @@ local config = {
     },
     init_options = {
         bundles = bundles,
-    }
+    },
+    capabilities = capabilities,
 }
 require('jdtls').start_or_attach(config)

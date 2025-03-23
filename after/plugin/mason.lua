@@ -6,6 +6,8 @@ local externalConfigurationServers = {
 
 local debugMode = false
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true -- Enable LSP snippets
 require("mason-lspconfig").setup({
     ensure_installed = { "eslint", "pyright", "lua_ls", "ts_ls", "html", "cssls", "jsonls"},
     handlers = {
@@ -15,7 +17,9 @@ require("mason-lspconfig").setup({
                     print("The server " .. server_name .. "is configured externally");
                 end
             else
-                require('lspconfig')[server_name].setup({})
+                require('lspconfig')[server_name].setup({
+                    capabilities = capabilities
+                })
             end
 
             ts_ls = function()
@@ -26,6 +30,7 @@ require("mason-lspconfig").setup({
                             javascript = { format = { semicolons = "insert" } },
                             typescript = { format = { semicolons = "insert" } },
                         },
+                        capabilities = capabilities
                     })
             end
         end
