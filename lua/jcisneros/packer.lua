@@ -70,5 +70,8 @@ return require('packer').startup(function(use)
             'mfussenegger/nvim-dap',
         }
     })
+
+    --------- SQL connection support --------- 
+    use({"tpope/vim-dadbod"})
 end)
 
