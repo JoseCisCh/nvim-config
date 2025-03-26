@@ -2,3 +2,4 @@
 require("jcisneros.remap")
 require("jcisneros.java")
 require("jcisneros.set")
+require("jcisneros.nvim-emmet")
