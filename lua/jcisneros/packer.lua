@@ -73,5 +73,8 @@ return require('packer').startup(function(use)
 
     --------- SQL connection support --------- 
     use({"tpope/vim-dadbod"})
+
+    --------- Emmet addition for HTML snippets ---------  
+    use({'mattn/emmet-vim'})
 end)
 
