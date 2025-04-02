@@ -25,7 +25,10 @@ require('nvim-treesitter.configs').setup({
     auto_install = true,
 
     indent = {
-        enable = false,
+        enable = true,
+        disable = function(lang, bufnr)
+            return lang ~= "xml"  -- Enable only for XML, disable for everything else
+        end
     },
 
     highlight = {
