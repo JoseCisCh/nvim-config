@@ -15,6 +15,7 @@ require('nvim-treesitter.configs').setup({
         "vimdoc",
         "bash",
         "xml",
+        "yaml",
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
