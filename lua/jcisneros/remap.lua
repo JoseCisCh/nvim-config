@@ -51,7 +51,9 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- Avoids entering in Ex mode
 vim.keymap.set("n", "Q", "<nop>")
 
--- I think this is for a plugin becasue is not doing anything.
+-- This map is to create a new tmux windows, but the tmux-sessionizer must be 
+-- a manual script that changes the current window to the new one created, I 
+-- would have to write that script, not working by default
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Formats the current buffer (I guess file) 
