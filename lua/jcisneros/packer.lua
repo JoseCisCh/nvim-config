@@ -76,5 +76,19 @@ return require('packer').startup(function(use)
 
     --------- Emmet addition for HTML snippets ---------  
     use({'mattn/emmet-vim'})
+
+    --------- Neotest for inline pass/fails markers ---------  
+    use({"nvim-neotest/nvim-nio",})
+    use({"rcasia/neotest-java"})
+    use {
+        "nvim-neotest/neotest",
+        requires = {
+            "nvim-neotest/nvim-nio",
+            "nvim-lua/plenary.nvim",
+            "antoinemadec/FixCursorHold.nvim",
+            "nvim-treesitter/nvim-treesitter"
+        }
+    }
+
 end)
 
