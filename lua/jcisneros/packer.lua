@@ -90,5 +90,11 @@ return require('packer').startup(function(use)
         }
     }
 
+    --------- Adding Jacoco coverage support to editor ---------  
+    use({
+        "andythigpen/nvim-coverage",
+        requires = "nvim-lua/plenary.nvim",
+    } )
+
 end)
 
