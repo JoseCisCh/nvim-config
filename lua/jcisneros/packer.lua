@@ -96,5 +96,13 @@ return require('packer').startup(function(use)
         requires = "nvim-lua/plenary.nvim",
     } )
 
+    --------- Color picker plugin ---------  
+    use({
+        "uga-rosa/ccc.nvim",
+        config = function()
+            require("ccc").setup()
+        end
+    })
+
 end)
 
