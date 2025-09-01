@@ -104,5 +104,14 @@ return require('packer').startup(function(use)
         end
     })
 
+    -------- Obsidian support for neovim -------- 
+
+    use({
+        "epwalsh/obsidian.nvim",
+        tag = "*",
+        requires = {
+            "nvim-lua/plenary.nvim"
+        }
+    })
 end)
 
