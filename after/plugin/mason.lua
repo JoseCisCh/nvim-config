@@ -9,7 +9,7 @@ local debugMode = false
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true -- Enable LSP snippets
 require("mason-lspconfig").setup({
-    ensure_installed = { "eslint", "pyright", "lua_ls", "ts_ls", "html", "cssls", "jsonls", "bashls", "lemminx"},
+    ensure_installed = { "eslint", "pyright", "lua_ls", "ts_ls", "html", "cssls", "jsonls", "bashls", "lemminx", "clangd" },
     handlers = {
         function(server_name)
             if externalConfigurationServers[server_name] then
