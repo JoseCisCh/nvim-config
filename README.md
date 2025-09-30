@@ -7,6 +7,18 @@ In the case of Java LSP (**jdlts**) I had to make some hard coded configs in the
   - In **lsp-config.lua** I set the paths for the **Java runtimes**
   - In case of need, change the path of the **Java sdk**. By default it takes a path assuming that **SDKMAN** is installed, however it may be different depening on how **Java** is installed in the machine.
 
+### Important note Java LSP
+
+The first time that a project is opened, it will take the **Java** version that was configured first, most likely the one specifiec in the **pom.xml** file.
+If it is necesarry to make the **LSP** reload the project with a different version **Java**, then these are the recommendations:
+
+  - **Delete** the file at the path: `~/.local/share/nvim/jdtls-workspace/<project_name>/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.launching.prefs`
+
+If the previous didnt work, then delete the whole project directory at:
+
+`~/.local/share/nvim/jdtls-workspace/<project_name>/.`
+
+Additional to delting the **file** or the whole **directory**, remember to change `pom.xml` file, and set the **JAVA_HOME** to the correct Java version.
 
 Requirements for the **nvim** configuration to work:
 
