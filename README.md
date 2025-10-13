@@ -18,6 +18,12 @@ If the previous didnt work, then delete the whole project directory at:
 
 `~/.local/share/nvim/jdtls-workspace/<project_name>/.`
 
+#### Lombok in jdtls
+
+When using `lombok` packages, I had problems having autocompletion with code relateed to them, for example `getters` and `setters` of a class using `lombok` annotations.
+
+To solve this, in the file `ftplugin/java.lua`, it is necessary to add the correct path for `javaagent` in the `cmd` section of the `config`.
+
 Additional to delting the **file** or the whole **directory**, remember to change `pom.xml` file, and set the **JAVA_HOME** to the correct Java version.
 
 Requirements for the **nvim** configuration to work:

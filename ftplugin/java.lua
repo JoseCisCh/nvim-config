@@ -10,6 +10,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true -- Ena
 local config = {
     cmd = {
         home .. '/.local/share/nvim/mason/packages/jdtls/bin/jdtls',
+        "--jvm-arg=-javaagent:" .. "/Users/josecisneros/.local/share/nvim/mason/packages/jdtls/lombok.jar", -- Important line to make Lombok work in neovim.
         "-data", vim.fn.stdpath("data") .. "/jdtls-workspace/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
     },
     root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw', 'pom.xml', 'build.gradle'}, { upward = true })[1]),
