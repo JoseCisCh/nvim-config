@@ -1,4 +1,3 @@
-
 local home = os.getenv('HOME')
 local bundles = {
     vim.fn.glob(home .. "/.local/share/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar", 1)
