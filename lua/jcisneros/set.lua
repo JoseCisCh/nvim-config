@@ -29,3 +29,13 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 300
 
 vim.opt.colorcolumn = "80"
+
+------- Configurations for folding functions -------
+
+-- Setting tree-sitter as the folding method
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- Other recommended configs for folding
+vim.opt.foldlevel = 99        -- open folds by default
+vim.opt.foldenable = true
